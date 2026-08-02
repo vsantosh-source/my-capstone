@@ -3,3 +3,6 @@ httpx
 openai
 python-dotenv
 streamlit
+altair
+pandas
+yfinance
