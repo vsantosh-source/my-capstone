@@ -3,7 +3,7 @@
 ```text
 my-capstone/
 ├── README.md
-├── app.py                         # Final API used by students
+├── main.py                        # Final API used by students
 ├── demo_page.py                    # Streamlit UI for the final API
 ├── smoke_test.py                   # No-token API startup check
 ├── requirements.txt
