@@ -1,4 +1,4 @@
-"""Week 1 v2 demo API: one compact `/ask` endpoint for the intro class.
+"""Capstone demo API: one compact `/ask` endpoint for the intro class.
 
 Run:
   uvicorn main:app --host 127.0.0.1 --port 8000 --reload
@@ -17,7 +17,7 @@ THIS_DIR = Path(__file__).resolve().parent
 load_dotenv(THIS_DIR / ".env")
 load_dotenv(THIS_DIR.parent / ".env")
 
-app = FastAPI(title="Week 1 v2 /ask Demo")
+app = FastAPI(title="Capstone /ask Demo")
 _client: OpenAI | None = None
 
 ModelName = Literal["gpt-4o-mini", "gpt-4o", "o3-mini"]

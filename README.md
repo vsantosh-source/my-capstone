@@ -1,3 +1,10 @@
+# About
+
+A Streamlit app where you can analyze recent trending consumer phenomenon and create an investment thesis.
+
+View it here: [Streamlit App](https://social-signal-alpha.streamlit.app)
+
+
 ## File Map
 
 ```text

@@ -9,7 +9,7 @@ import json
 import httpx
 import streamlit as st
 
-WORKDIR_CMD = "ai-engineering-bootcamp-v2/week-1v2"
+WORKDIR_CMD = "Capstone"
 MODELS = ["gpt-4o-mini", "gpt-4o", "o3-mini"]
 
 
@@ -89,8 +89,8 @@ def render_response_summary(data: dict | str) -> None:
     metric_cols[3].metric("Cost", f"${data.get('cost_usd', '-')}")
 
 
-st.set_page_config(page_title="Week 1 v2 /ask Demo", layout="centered")
-st.title("Week 1 v2: Minimal `/ask` Demo")
+st.set_page_config(page_title="Capstone /ask Demo", layout="centered")
+st.title("Capstone: Minimal `/ask` Demo")
 st.caption(
     "One final demo endpoint. The separate `stages/` files show how this grows step by step."
 )
