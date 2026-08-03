@@ -4,15 +4,41 @@ import pandas as pd
 import altair as alt
 
 st.set_page_config(
-    page_title="Stock peer analysis dashboard",
+    page_title="Social Signal Alpha Dashboard",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",
 )
 
+""
+
+# Plot individual stock vs peer average
+"""
+## Select your persona
+
+"""
+
+NUM_COLS = 3
+col1, col2, col3 = st.columns(NUM_COLS)
+
+# Add widgets to each column
+with col1:
+    st.header("Column 1")
+    st.text_input("Enter text here")
+    st.button("Click Me")
+
+with col2:
+    st.header("Column 2")
+    st.slider("Select a value", 0, 100)
+
+with col3:
+    st.header("Column 3")
+    st.checkbox("Accept terms")
+
+
 """
 # :material/query_stats: Stock peer analysis
 
-Easily compare stocks against others in their peer group.
+Social signal based investing.
 """
 
 ""  # Add some space.
