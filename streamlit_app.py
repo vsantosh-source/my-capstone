@@ -11,7 +11,7 @@ st.set_page_config(
 
 ""
 
-# Plot individual stock vs peer average
+# Select End User
 """
 ## Select your persona
 
@@ -20,19 +20,26 @@ st.set_page_config(
 NUM_COLS = 3
 col1, col2, col3 = st.columns(NUM_COLS)
 
-# Add widgets to each column
+# Column 1
 with col1:
-    st.header("Column 1")
-    st.text_input("Enter text here")
-    st.button("Click Me")
+    st.markdown("<div style='text-align: center;'>🚀</div>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>Retail Investor</h3>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: gray;'>Discover viral products organically.</p>", unsafe_allow_html=True)
+    st.button("Launch")
 
+# Column 2
 with col2:
-    st.header("Column 2")
-    st.slider("Select a value", 0, 100)
+    st.markdown("<div style='text-align: center;'>📊</div>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>Analyst</h3>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: gray;'>Perform deep fundamental research.</p>", unsafe_allow_html=True)
+    st.slider("Select value", 0, 100)
 
+# Column 3
 with col3:
-    st.header("Column 3")
-    st.checkbox("Accept terms")
+    st.markdown("<div style='text-align: center;'>⚙️</div>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>Configure</h3>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: gray;'>Filter ideas and spot portfolio risks.</p>", unsafe_allow_html=True)
+    st.checkbox("Enable feature")
 
 
 """
