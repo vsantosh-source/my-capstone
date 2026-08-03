@@ -13,34 +13,60 @@ st.set_page_config(
 
 # Select End User
 """
-## Select your persona
+## What would you like to do?
 
 """
 
+# Initialize session state for the selected section
+if 'selected_section' not in st.session_state:
+    st.session_state.selected_section = "Get Started"
+
+# Function to update state
+def set_section(section):
+    st.session_state.selected_section = section
+
+# Create 3 equal-width columns
 NUM_COLS = 3
 col1, col2, col3 = st.columns(NUM_COLS)
 
 # Column 1
 with col1:
-    st.markdown("<div style='text-align: center;'>🚀</div>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center;'>Retail Investor</h3>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: gray;'>Discover viral products organically.</p>", unsafe_allow_html=True)
-    st.button("Launch")
+    # Use a button or a hidden radio to trigger state change
+    if st.button("🚀 Retail Investor", use_container_width=True, key="btn1"):
+        set_section("Retail Investor")
+    st.markdown("<p style='text-align: center; color: gray; margin-top: -10px;'>iscover viral products organically.</p>", unsafe_allow_html=True)
 
 # Column 2
 with col2:
-    st.markdown("<div style='text-align: center;'>📊</div>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center;'>Analyst</h3>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: gray;'>Perform deep fundamental research.</p>", unsafe_allow_html=True)
-    st.slider("Select value", 0, 100)
+    if st.button("📊 Equity Analyst", use_container_width=True, key="btn2"):
+        set_section("Equity Analyst")
+    st.markdown("<p style='text-align: center; color: gray; margin-top: -10px;'>Perform deep fundamental research.</p>", unsafe_allow_html=True)
 
 # Column 3
 with col3:
-    st.markdown("<div style='text-align: center;'>⚙️</div>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center;'>Configure</h3>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: gray;'>Filter ideas and spot portfolio risks.</p>", unsafe_allow_html=True)
-    st.checkbox("Enable feature")
+    if st.button("⚙️ Portfolio Manager", use_container_width=True, key="btn3"):
+        set_section("Portfolio Manager")
+    st.markdown("<p style='text-align: center; color: gray; margin-top: -10px;'>Filter ideas and spot portfolio risks.</p>", unsafe_allow_html=True)
+    
+st.divider()
 
+# Dynamic Content Below
+st.subheader(f"Content for: {st.session_state.selected_section}")
+
+if st.session_state.selected_section == "Retail Investor":
+    st.write("Here you can initialize your project settings...")
+    st.text_input("Project Name")
+    st.button("Create Project")
+
+elif st.session_state.selected_section == "Equity Analyst":
+    st.write("Displaying your data analytics dashboard...")
+    st.slider("Data Range", 0, 100)
+    st.line_chart([1, 2, 3, 4, 5])
+
+elif st.session_state.selected_section == "Portfolio Manager":
+    st.write("Adjust your system configuration...")
+    st.checkbox("Enable Advanced Mode")
+    st.selectbox("Select Theme", ["Light", "Dark"])   
 
 """
 # :material/query_stats: Stock peer analysis
