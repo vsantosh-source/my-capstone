@@ -10,9 +10,8 @@ View it here: [Streamlit App](https://social-signal-alpha.streamlit.app)
 ```text
 my-capstone/
 ├── README.md
-├── main.py                        # Final API used by students
-├── demo_page.py                    # Streamlit UI for the final API
-├── smoke_test.py                   # No-token API startup check
+├── main.py                         # Final API
+├── landing_page.py                 # Streamlit UI
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
