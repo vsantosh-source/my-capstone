@@ -23,4 +23,4 @@ COPY . .
 EXPOSE 8501
 
 # Render requires host 0.0.0.0
-CMD ["uv", "run", "streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8501"]

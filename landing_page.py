@@ -389,7 +389,8 @@ if st.session_state.selected_plan:
             selected_category = st.selectbox("Select Category", CATEGORIES, index=None, placeholder="Choose a category.") 
             #st.markdown(f"You Selected: {selected_category}", unsafe_allow_html=True)
 
-            base_url = "http://127.0.0.1:8000"
+            #base_url = "http://127.0.0.1:8000"
+            base_url = "https://social-signal-alpha.onrender.com"
 
             #question = f"Search the web for recent viral trends in the {selected_category} industry and brands seeing momentum in the last one week. I don't need any explanations, just output a comma separated list of stock tickers for any publicly traded {selected_category} companies associated with these trends.  Do not output company names, only stock tickers."
             question = (f"Search the web for recent viral trends in the {selected_category} industry and brands seeing momentum in the last one week. "
