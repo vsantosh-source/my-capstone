@@ -103,7 +103,7 @@ if 'selected_plan' not in st.session_state:
 
 # Helper function to trigger scroll via JavaScript
 def scroll_to_section():
-    st.html("""
+    st.components.v1.html("""
         <script>
             (function() {
                 var target = window.parent.document.getElementById('signup-section');
@@ -117,7 +117,7 @@ def scroll_to_section():
                 }
             })();
         </script>
-    """, unsafe_allow_javascript=True)
+    """, height=0)
 
 # Callback function to set the selected plan and trigger scroll
 def select_plan(plan_name):
@@ -422,17 +422,20 @@ if st.session_state.selected_plan:
                 #st.markdown("### Raw JSON")
                 #st.json(data)
 
-                answer = data.get("answer")
+                answer = data.get("answer") if isinstance(data, dict) else None
                 #if isinstance(answer, dict):
                 #    st.markdown("### Answer")
                 #    st.write(answer.get("answer", ""))
 
-                if answer.get("answer"):
+                if isinstance(answer, dict) and answer.get("answer"):
                     st.session_state.fetched_stocks = [
                         ticker.strip().upper() for ticker in answer["answer"].split(",") if ticker.strip()
                     ]
                     #st.markdown("### List of stocks from API response:")
                     #st.write(st.session_state.fetched_stocks)
+                else:
+                    error_message = data.get("error") if isinstance(data, dict) else None
+                    st.error(error_message or "Failed to fetch trending stocks. Please try again.")
 
             if st.session_state.get("fetched_stocks"):
                 st.markdown('\n\n', unsafe_allow_html=True)
