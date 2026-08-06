@@ -12,7 +12,8 @@ my-capstone/
 ├── README.md
 ├── main.py                         # Final API
 ├── landing_page.py                 # Streamlit UI
-├── requirements.txt
+├── pyproject.toml
+├── uv.lock
 ├── .env.example
 ├── .gitignore
 ├── .devcontainer/
